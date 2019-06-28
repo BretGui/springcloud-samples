@@ -1,0 +1,26 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  security:
+    user.name: admin
+    user.password: 123456
+
+eureka:
+  instance:
+    hostname: xscope.online
+    prefer-ip-address: true
+  server:
+    # 关闭自我保护
+    #enable-self-preservation: false
+    # 清理间隔（单位毫秒，默认是60*1000）
+    #eviction-interval-timer-in-ms: 10000
+  client:
+    # 关闭向服务中心注册自己
+    register-with-eureka: false
+    # 关闭发现注册服务，注册中心仅用于维护节点
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
