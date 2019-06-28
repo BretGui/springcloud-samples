@@ -23,6 +23,7 @@ management:
 
 eureka:
   instance:
+    hostname: localhost
     # 配置eureka认证 否则服务启动后一直为DOWN
     metadata-map:
       user.name: admin

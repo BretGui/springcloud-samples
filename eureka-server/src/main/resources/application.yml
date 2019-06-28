@@ -10,7 +10,7 @@ spring:
 
 eureka:
   instance:
-    hostname: xscope.online
+    hostname: localhost
     prefer-ip-address: true
   server:
     # 关闭自我保护
