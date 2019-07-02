@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  tomcat:
+    max-threads: 1
+    max-connections: 10000
+
+spring:
+  # 数据源
+  datasource:
+    url: jdbc:postgresql://172.24.3.23:5432/amap
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: Gaiaxis2011
+  security:
+    user:
+      name: admin
+      password: 123456
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: service-geo
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  type-aliases-package: com.bretgui.geoservie.*.entity
+  # 打印sql
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
